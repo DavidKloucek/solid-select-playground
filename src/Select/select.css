@@ -1,0 +1,33 @@
+.solid-select {
+  border-radius: 5px;
+  border: solid silver 1px;
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+}
+
+.solid-select-menu-list {
+  z-index: 1500;
+  background-color: white;
+  border: solid silver 1px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  list-style-type: none;
+  position: absolute;
+  padding: 0;
+  margin: 23px 0 0 0;
+}
+
+.solid-select-menu-list li {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.solid-select-menu-list li:hover {
+  background-color: whitesmoke;
+}
+
+.solid-select-menu-list .selected {
+  font-weight: bold;
+}
