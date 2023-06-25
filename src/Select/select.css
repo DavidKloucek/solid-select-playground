@@ -1,3 +1,4 @@
+/** general */
 .solid-select {
   border-radius: 5px;
   border: solid silver 1px;
@@ -6,6 +7,74 @@
   display: inline-block;
 }
 
+.solid-select-single {}
+
+.solid-select-multi {}
+
+/** input */
+.solid-select-input {
+  cursor: pointer;
+}
+
+.solid-select-input-inner {
+  display: inline-block;
+}
+
+.solid-select-input-reset-all {
+  font-weight: bold;
+  padding: 0px 2px;
+}
+
+.solid-select-input-reset-all:hover {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+}
+
+.solid-select-input-list {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.solid-select-input-list-remove {
+  font-weight: bold;
+  padding: 0px 2px;
+}
+
+.solid-select-input-list-remove:hover {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+}
+
+.solid-select-input-list {
+  list-style-type: none;
+}
+
+.solid-select-multi .solid-select-input-list li {
+  border-radius: 4px;
+  background-color: whitesmoke;
+  padding: 3px 4px;
+}
+
+.solid-select-input-list.solid-select-single {
+  width: 100%;
+}
+
+.solid-select-input-list.solid-select-multi {}
+
+.solid-select-indicators.solid-select-multi {
+  width: calc(100% - 20px);
+}
+
+.solid-select-input-list-label {
+  list-style-type: none;
+  padding: 3px 6px;
+  margin: 0;
+}
+
+/** menu */
 .solid-select-menu-list {
   z-index: 1500;
   background-color: white;
@@ -15,13 +84,14 @@
   list-style-type: none;
   position: absolute;
   padding: 0;
-  margin: 23px 0 0 0;
+  margin: 4px 0 0 0;
+  border-top: 0;
 }
 
 .solid-select-menu-list li {
   cursor: pointer;
   margin: 0;
-  padding: 0;
+  padding: 2px 7px;
 }
 
 .solid-select-menu-list li:hover {

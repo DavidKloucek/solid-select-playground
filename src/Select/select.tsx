@@ -83,7 +83,9 @@ export const Select = (defaultProps: SelectProps): JSX.Element => {
             ref={containerRef}
             classList={{
                 "solid-select": true,
-                ['solid-select-multi']: props.isMulti,
+                'solid-select-multi': props.isMulti,
+                'solid-select-single': !props.isMulti,
+                'solid-select-clearable': !!props.isClearable,
                 [props.className ?? '']: !!props.className,
             }}
         >

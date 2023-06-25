@@ -1,5 +1,5 @@
 import "./App.module.css";
-import { createSignal, JSX } from "solid-js";
+import { createSignal, JSX, Show } from "solid-js";
 import { Select } from "./Select/select";
 import { Panel } from "./components";
 
@@ -60,6 +60,7 @@ function AsyncLazyLoadSelect(): JSX.Element {
   }
 
   const [selected, setSelected] = createSignal<string[]>([])
+  const [isFetching, setFetching] = createSignal<boolean>(false)
 
   const [options, setOptions] = createSignal([allData[1]])
 
@@ -70,13 +71,18 @@ function AsyncLazyLoadSelect(): JSX.Element {
       options={options()}
       value={[allData[1]]}
       onMenuOpen={async () => {
+        setFetching(true)
         setOptions(await fetchData())
+        setFetching(false)
       }}
       onChange={(items) => {
         setSelected(items.map(x => x.label))
       }}
     />
     <p>Selected values: {selected().length > 0 ? selected().join(", ") : <>nothing</>}</p>
+    <Show when={isFetching()}>
+      <p>Fetching data..</p>
+    </Show>
   </>
 }
 

@@ -14,13 +14,13 @@ export const Input = (props: InputProps): JSX.Element => {
     return <>
         <Switch>
             <Match when={props.selectedItems.length > 0}>
-                <ul class={"solid-select-input-selected-list"}>
+                <ul class={"solid-select-input-list"}>
                     <For each={props.selectedItems}>
                         {item => (
                             <li>
-                                <span>{item.label}</span>
+                                <span class="solid-select-input-list-label">{item.label}</span>
                                 {props.isMulti && (
-                                    <button type="button" class="solid-select-input-selected-list-remove" onClick={() => props.onUnselectItem(item)}>×</button>
+                                    <span class="solid-select-input-list-remove" onClick={() => props.onUnselectItem(item)}>×</span>
                                 )}
                             </li>
                         )}
@@ -32,9 +32,11 @@ export const Input = (props: InputProps): JSX.Element => {
             {props.selectedItems.length === 0 && props.placeholder && <>
                 {props.placeholder}
             </>}
-            {props.selectedItems.length > 0 && props.isClearable && (
-                <button class="solid-select-input-reset-all" type="button" onClick={props.onResetValues}>×</button>
-            )}
+            <div class="solid-select-indicators">
+                {props.selectedItems.length > 0 && props.isClearable && (
+                    <div class="solid-select-input-reset-all" onClick={props.onResetValues}>×</div>
+                )}
+            </div>
         </div>
     </>
 }
